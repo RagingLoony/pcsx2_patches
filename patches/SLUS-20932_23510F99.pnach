@@ -1,29 +1,25 @@
 gametitle=Mercenaries - Playground of Destruction (NTSC-U) (SLUS-20932)
 
-[Widescreen 16:9]
-gsaspectratio=16:9
-author=ElHecht
-description=Widescreen Hack
-// 16:9
-patch=1,EE,0033b0a0,word,3c013f40 // 00000000 hor fov
+[FMV Audio Skip Fix]
+author=RagingLoony (credit: Abbanon from PCSX2 issue #3603)
+description=Fixes choppy/skippy dialogue and audio desync in cutscenes/FMVs. Do not enable together with 60FPS or Combined option.
 
-// 16:10
-//patch=1,EE,0033b0a0,word,3c013f55 // 00000000 hor fov
-//patch=1,EE,0033b0a4,word,34215555 // 00000000 hor fov
+patch=1,EE,003AD710,word,24030002
 
-// 16:9 and 16:10 main modifications
-// no need to change anything here! all modifications are calculated
-// based on the hor fov value in the upper 16:9/16:10 section
-patch=1,EE,0033b0a8,word,4481f000 // 00000000 fov
-patch=1,EE,0033b0e8,word,4600f306 // 44816000 fov
-patch=1,EE,0033ef74,word,461e0843 // 3c013f80 renderfix 1 objects
-patch=1,EE,0033ef78,word,46010d43 // 4481a800 renderfix 1 objects
-patch=1,EE,00346e60,word,4600f306 // 44816000 renderfix 2 smoke and fire
-patch=1,EE,00339a00,word,0813cbee // 46030842 hud-identification fix
-patch=1,EE,00339a04,word,00000000 // 46030002 hud-identification fix
-patch=1,EE,004f2fb8,word,46030842 // 00000000 hud-identification fix
-patch=1,EE,004f2fbc,word,46030002 // 00000000 hud-identification fix
-patch=1,EE,004f2fc0,word,461e0002 // 00000000 hud-identification fix
-patch=1,EE,004f2fc4,word,080ce681 // 00000000 hud-identification fix
+[60 FPS]
+author=Community
+description=Unlocks 60 FPS. May require EE Cycle Rate overclock for stable performance. Do not enable together with the FMV fix or Combined option.
 
+patch=1,EE,203AD720,extended,2C420001
 
+[FMV Audio Skip Fix + 60 FPS (Combined)]
+author=Abbanon (from PCSX2 issue #3603)
+description=Combined version that fixes FMV audio skipping while also unlocking 60 FPS. Use this if you want both features. Do not enable together with the individual options above. May require EE Cycle Rate overclock for stable 60 FPS.
+
+patch=1,EE,003AD710,word,0803FFC0
+patch=1,EE,000FFF00,word,8C6355DC
+patch=1,EE,000FFF04,word,10600003
+patch=1,EE,000FFF0C,word,24030000
+patch=1,EE,000FFF10,word,080EB5C6
+patch=1,EE,000FFF18,word,24030002
+patch=1,EE,000FFF1C,word,080EB5C6
