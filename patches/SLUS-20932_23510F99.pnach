@@ -27,19 +27,19 @@ patch=1,EE,004f2fc0,word,461e0002 // 00000000 hud-identification fix
 patch=1,EE,004f2fc4,word,080ce681 // 00000000 hud-identification fix
 
 [FMV Audio Skip Fix]
-author=Community
+author=Ghost
 description=Fixes choppy/skippy dialogue and audio desync in cutscenes/FMVs. Do not enable together with 60FPS or Combined option.
 
 patch=1,EE,003AD710,word,24030002
 
 [60 FPS]
-author=Community
+author=Asasega
 description=Unlocks 60 FPS. May require EE Cycle Rate overclock for stable performance. Do not enable together with the FMV fix or Combined option.
 
 patch=1,EE,203AD720,extended,2C420001
 
 [FMV Audio Skip Fix + 60 FPS (Combined)]
-author=Community
+author=Ghost
 description=Combined version that fixes FMV audio skipping while also unlocking 60 FPS. Use this if you want both features. Do not enable together with the individual options above. May require EE Cycle Rate overclock for stable 60 FPS.
 
 patch=1,EE,003AD710,word,0803FFC0
